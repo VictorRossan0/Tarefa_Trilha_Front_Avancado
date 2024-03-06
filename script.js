@@ -7,12 +7,12 @@ let darkMode = false;
 
 themeToggleBtn.addEventListener('click', () => {
   darkMode = !darkMode;
-  const container = document.querySelector('.container');
+  const body = document.querySelector('body');
   if (darkMode) {
-    container.classList.add('dark-mode');
+    body.classList.add('dark-mode');
     themeToggleBtn.textContent = 'Modo Claro';
   } else {
-    container.classList.remove('dark-mode');
+    body.classList.remove('dark-mode');
     themeToggleBtn.textContent = 'Modo Escuro';
   }
 });
