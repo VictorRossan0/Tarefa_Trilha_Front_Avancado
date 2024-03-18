@@ -1,65 +1,104 @@
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
-    color: #333;
-  }
+:root {
+  --background-light: #f8f8f8;
+  --text-light: #333;
+  --background-dark: #333;
+  --text-dark: #f8f8f8;
+}
 
-  body.light-mode {
-    background-color: #f8f8f8;
-    color: #333;
-  }
-  
-  body.dark-mode {
-    background-color: #333;
-    color: #f8f8f8;
-  }  
-  
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  li:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .theme-toggle {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  #toggle-btn {
-    padding: 5px 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #toggle-btn:hover {
-    background-color: #555;
-  }
-  
-  .completed {
-    text-decoration: line-through;
-    color: #888;
-  }
-  
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  color: #333; /* Cor original do título */
+}
+
+
+/* Remove a estilização padrão das listas */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Estilo para cada item de lista */
+li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: #333;
+  /* Transição suave de cor de fundo */
+}
+
+/* Efeito de destaque ao passar o mouse sobre um item de lista */
+li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilo para o botão de alternar tema */
+.theme-toggle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para o botão de alternar tema */
+#toggle-btn {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Efeito de destaque ao passar o mouse sobre o botão de alternar tema */
+#toggle-btn:hover {
+  background-color: #555;
+}
+
+/* Estilo para itens de lista completos (tarefas concluídas) */
+.completed {
+  text-decoration: line-through;
+  /* Tarefa concluída com linha no texto */
+  color: #888;
+  /* Cor de texto mais clara para tarefas concluídas */
+}
+
+/* Estilo para os botões de remoção e conclusão */
+.remove-btn,
+.complete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.remove-btn:hover,
+.complete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Estilo para itens de lista completos (tarefas concluídas) */
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
