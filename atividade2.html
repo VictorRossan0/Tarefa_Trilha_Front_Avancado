@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Verificador de Triângulo</title>
+    <script>
+        function verificarTriangulo() {
+            var lado1 = parseFloat(document.getElementById("lado1").value);
+            var lado2 = parseFloat(document.getElementById("lado2").value);
+            var lado3 = parseFloat(document.getElementById("lado3").value);
+
+            if (lado1 + lado2 > lado3 && lado2 + lado3 > lado1 && lado1 + lado3 > lado2) {
+                if (lado1 === lado2 && lado2 === lado3) {
+                    document.getElementById("resultado").innerText = "É um triângulo equilátero.";
+                } else if (lado1 === lado2 || lado1 === lado3 || lado2 === lado3) {
+                    document.getElementById("resultado").innerText = "É um triângulo isósceles.";
+                } else {
+                    document.getElementById("resultado").innerText = "É um triângulo escaleno.";
+                }
+            } else {
+                document.getElementById("resultado").innerText = "Os valores fornecidos não formam um triângulo válido.";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Verificador de Triângulo</h1>
+    <p>Digite os comprimentos dos três lados do triângulo:</p>
+    <label for="lado1">Lado 1:</label>
+    <input type="number" id="lado1"><br><br>
+    <label for="lado2">Lado 2:</label>
+    <input type="number" id="lado2"><br><br>
+    <label for="lado3">Lado 3:</label>
+    <input type="number" id="lado3"><br><br>
+    <button onclick="verificarTriangulo()">Verificar</button><br><br>
+    <p id="resultado"></p>
+</body>
+
+</html>
+
+<!-- Utilizando o Math.js -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Verificador de Triângulo</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.0/math.min.js"></script>
+    <script>
+        function verificarTriangulo() {
+            var lado1 = parseFloat(document.getElementById("lado1").value);
+            var lado2 = parseFloat(document.getElementById("lado2").value);
+            var lado3 = parseFloat(document.getElementById("lado3").value);
+
+            if (math.smaller(math.add(lado1, lado2), lado3) || math.smaller(math.add(lado2, lado3), lado1) || math.smaller(math.add(lado1, lado3), lado2)) {
+                document.getElementById("resultado").innerText = "Os valores fornecidos não formam um triângulo válido.";
+                return;
+            }
+
+            if (math.equal(lado1, lado2) && math.equal(lado2, lado3)) {
+                document.getElementById("resultado").innerText = "É um triângulo equilátero.";
+            } else if (math.equal(lado1, lado2) || math.equal(lado1, lado3) || math.equal(lado2, lado3)) {
+                document.getElementById("resultado").innerText = "É um triângulo isósceles.";
+            } else {
+                document.getElementById("resultado").innerText = "É um triângulo escaleno.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Verificador de Triângulo</h1>
+    <p>Digite os comprimentos dos três lados do triângulo:</p>
+    <label for="lado1">Lado 1:</label>
+    <input type="number" id="lado1"><br><br>
+    <label for="lado2">Lado 2:</label>
+    <input type="number" id="lado2"><br><br>
+    <label for="lado3">Lado 3:</label>
+    <input type="number" id="lado3"><br><br>
+    <button onclick="verificarTriangulo()">Verificar</button><br><br>
+    <p id="resultado"></p>
+</body>
+</html> -->

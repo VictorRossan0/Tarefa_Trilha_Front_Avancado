@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Comparação de Números</title>
+</head>
+<!-- Inicio Body onde se é feito o esqueleto/Definição de ID -->
+
+<body>
+    <h2>Comparação de Três Números</h2>
+    <label for="numero1">Número 1:</label>
+    <input type="number" id="numero1" required>
+    <br>
+    <br>
+    <label for="numero2">Número 2:</label>
+    <input type="number" id="numero2" required>
+    <br>
+    <br>
+    <label for="numero3">Número 3:</label>
+    <input type="number" id="numero3" required>
+    <br>
+    <br>
+    <button onclick="compararNumeros()">Comparar</button>
+    <p id="resultado"></p>
+    <!-- Inicio Script Comparação dos números / Se os Campos foram preenchidos -->
+    <script>
+        function compararNumeros() {
+            const num1 = parseInt(document.getElementById('numero1').value);
+            const num2 = parseInt(document.getElementById('numero2').value);
+            const num3 = parseInt(document.getElementById('numero3').value);
+
+            if (!num1 || !num2 || !num3) {
+                document.getElementById('resultado').innerText = 'Por favor, insira todos os números.';
+                return;
+            }
+
+            const maiorNumero = Math.max(num1, num2, num3);
+            document.getElementById('resultado').innerText = `O maior número é: ${maiorNumero}`;
+        }
+    </script>
+
+</body>
+
+</html>
