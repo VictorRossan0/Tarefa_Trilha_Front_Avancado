@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fatorial</title>
+    <meta charset="UTF-8">
+    <script>
+        function calcularFatorial() {
+            let numero = prompt("Digite um número inteiro:");
+            let fatorial = 1;
+            for (let i = 1; i <= numero; i++) {
+                fatorial *= i;
+            }
+            alert("O fatorial de " + numero + " é " + fatorial);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calcularFatorial()">Calcular Fatorial</button>
+</body>
+</html>

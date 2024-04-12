@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area e Perimetro de um Circulo</title>
+    <meta charset="UTF-8">
+    <script>
+        function calcularCirculo() {
+            let raio = prompt("Digite o raio do circulo:");
+            let area = Math.PI * raio * raio;
+            let perimetro = 2 * Math.PI * raio;
+            alert("A area do circulo é " + area.toFixed(2) + " e o perimetro é " + perimetro.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calcularCirculo()">Calcular Area e Perimetro</button>
+</body>
+</html>

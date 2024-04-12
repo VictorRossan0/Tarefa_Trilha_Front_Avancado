@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Retorno de Investimento</title>
+    <meta charset="UTF-8">
+    <script>
+        function calcularInvestimento() {
+            let capital = prompt("Digite o capital inicial:");
+            let taxa = prompt("Digite a taxa de juros (em %):");
+            let tempo = prompt("Digite o tempo do investimento (em meses):");
+            let montante = capital * Math.pow((1 + (taxa / 100)), tempo);
+            alert("O montante é R$ " + montante.toFixed(2));
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calcularInvestimento()">Calcular Montante</button>
+</body>
+</html>

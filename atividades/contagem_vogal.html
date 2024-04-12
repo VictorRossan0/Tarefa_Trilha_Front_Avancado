@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contagem de Vogais</title>
+    <meta charset="UTF-8">
+    <script>
+        function contarVogais() {
+            let string = prompt("Digite uma palavra ou frase:");
+            let vogais = string.match(/[aeiouAEIOU]/g);
+            let count = vogais ? vogais.length : 0;
+            alert("A string tem " + count + " vogais");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="contarVogais()">Contar Vogais</button>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Verificação de Número Primo</title>
+    <meta charset="UTF-8">
+    <script>
+        function verificarPrimo() {
+            let numero = parseInt(prompt("Digite um número inteiro positivo maior que 1:"));
+            if (numero <= 1 || !Number.isInteger(numero)) {
+                alert("Número inválido. Digite um número inteiro positivo maior que 1.");
+                return;
+            }
+            let primo = true;
+            for (let i = 2; i <= Math.sqrt(numero); i++) {
+                if (numero % i === 0) {
+                    primo = false;
+                    break;
+                }
+            }
+            if (primo) {
+                alert(numero + " é um número primo.");
+            } else {
+                alert(numero + " não é um número primo.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="verificarPrimo()">Verificar Número Primo</button>
+</body>
+</html>

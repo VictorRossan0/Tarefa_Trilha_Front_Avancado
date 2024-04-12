@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Contagem de Caractere</title>
+    <script>
+        function contarCaractere() {
+            let string = prompt("Digite uma palavra ou frase:");
+            let caractere = prompt("Digite o caractere a ser contado:");
+            let count = 0;
+            for (let i = 0; i < string.length; i++) {
+                if (string[i] === caractere) {
+                    count++;
+                }
+            }
+            alert("O caractere '" + caractere + "' aparece " + count + " vezes na string.");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="contarCaractere()">Contar Caractere</button>
+</body>
+</html>
