@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <script src="js/user.js"></script>
+    <script src="js/userController.js"></script>
+    <script src="js/userFactory.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>User Management</h1>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome"><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email"><br>
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade"><br>
+    <button onclick="addUser()">Adicionar Usuário</button>
+    <button onclick="updateUser()">Atualizar Usuário</button>
+    <button onclick="deleteUser()">Excluir Usuário</button>
+    <ul id="userList"></ul>
+
+    <script>
+        const controller = new UserController();
+
+        function addUser() {
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const idade = document.getElementById("idade").value;
+
+            const user = new User(nome, email, idade);
+            controller.addUser(user);
+            updateView();
+        }
+
+        function updateUser() {
+            const index = prompt("Digite o índice do usuário a ser atualizado:");
+            const nome = document.getElementById("nome").value;
+            const email = document.getElementById("email").value;
+            const idade = document.getElementById("idade").value;
+
+            const user = new User(nome, email, idade);
+            controller.updateUser(index, user);
+            updateView();
+        }
+
+        function deleteUser() {
+            const index = prompt("Digite o índice do usuário a ser excluído:");
+            controller.deleteUser(index);
+            updateView();
+        }
+
+        function updateView() {
+            const userList = document.getElementById("userList");
+            userList.innerHTML = "";
+            controller.getUsers().forEach((user, index) => {
+                const li = document.createElement("li");
+                li.textContent = `Nome: ${user.nome}, Email: ${user.email}, Idade: ${user.idade}`;
+                userList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+
+</html>
