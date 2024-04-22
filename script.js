@@ -11,8 +11,7 @@ themeToggleBtn.addEventListener('click', () => {
   themeToggleBtn.textContent = darkMode ? 'Modo Claro' : 'Modo Escuro';
 });
 
-addTaskBtn.addEventListener('click', () => {
-  const taskText = taskInput.value.trim();
+function addTask(taskText) {
   if (taskText === '') return;
 
   const existingTasks = Array.from(taskList.children).map(task => task.querySelector('span').textContent);
@@ -26,26 +25,40 @@ addTaskBtn.addEventListener('click', () => {
   taskSpan.textContent = taskText;
   taskItem.appendChild(taskSpan);
 
+  const removeBtn = createRemoveButton();
+  taskItem.appendChild(removeBtn);
+
+  const completeBtn = createCompleteButton();
+  taskItem.appendChild(completeBtn);
+
+  taskList.appendChild(taskItem);
+}
+
+function createRemoveButton() {
   const removeBtn = document.createElement('button');
   const removeIcon = document.createElement('i');
   removeIcon.classList.add('fas', 'fa-trash-alt');
   removeBtn.appendChild(removeIcon);
   removeBtn.classList.add('remove-btn');
   removeBtn.addEventListener('click', () => {
-    taskItem.remove();
+    removeBtn.parentNode.remove();
   });
-  taskItem.appendChild(removeBtn);
+  return removeBtn;
+}
 
+function createCompleteButton() {
   const completeBtn = document.createElement('button');
   const completeIcon = document.createElement('i');
   completeIcon.classList.add('fas', 'fa-check');
   completeBtn.appendChild(completeIcon);
   completeBtn.classList.add('complete-btn');
   completeBtn.addEventListener('click', () => {
-    taskItem.classList.toggle('completed');
+    completeBtn.parentNode.classList.toggle('completed');
   });
-  taskItem.appendChild(completeBtn);
+  return completeBtn;
+}
 
-  taskList.appendChild(taskItem);
+addTaskBtn.addEventListener('click', () => {
+  addTask(taskInput.value.trim());
   taskInput.value = '';
 });
