@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula sobre Classes em JavaScript</title>
+    <style>
+        body {
+            color: #f7f7f7;
+            background: linear-gradient(90deg, rgba(75,68,194,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+            font-family: Arial, sans-serif;
+        }
+        .code-block {
+            color: black;
+            background-color: #f7f7f7;
+            border-left: 5px solid #dd4b39;
+            padding: 10px;
+            margin: 10px 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .explanation {
+            margin-bottom: 20px;
+        }
+        #apresentacao {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aula sobre Classes em JavaScript</h1>
+
+    <section class="explanation">
+        <h2>1. Introdução às Classes em JavaScript</h2>
+        <p><strong>O que são Classes?</strong></p>
+        <p>Classes em JavaScript são um recurso introduzido no ECMAScript 2015 (ES6) que oferece uma maneira mais clara e concisa de criar objetos e lidar com herança. Embora JavaScript seja uma linguagem baseada em protótipos para herança, as classes oferecem uma sintaxe mais simples e direta para criar objetos e implementar herança.</p>
+    </section>
+
+    <section class="explanation">
+        <h2>2. Sintaxe básica de uma Classe</h2>
+        <div class="code-block">
+            class Pessoa {
+                constructor(nome, idade) {
+                    this.nome = nome;
+                    this.idade = idade;
+                }
+
+                seApresentar() {
+                    return `Meu nome é ${this.nome} e eu tenho ${this.idade} anos.`;
+                }
+            }
+        </div>
+        <p><strong>Explicação:</strong></p>
+        <ul>
+            <li><code>class Pessoa</code> declara uma classe chamada Pessoa.</li>
+            <li><code>constructor(nome, idade)</code> é um método especial para criar e inicializar um objeto criado com uma classe. Ele recebe os parâmetros nome e idade e os associa à nova instância do objeto.</li>
+            <li><code>seApresentar()</code> é um método da classe que retorna uma string apresentando a pessoa.</li>
+        </ul>
+    </section>
+
+    <section class="explanation">
+        <h2>3. Criando Instâncias de uma Classe</h2>
+        <div class="code-block">
+            const pessoa1 = new Pessoa("Alice", 30);
+            console.log(pessoa1.seApresentar());  // Saída: "Meu nome é Alice e eu tenho 30 anos."
+        </div>
+    </section>
+
+    <section class="explanation">
+        <h2>4. Herança entre Classes</h2>
+        <p>Herança é um princípio fundamental da programação orientada a objetos que permite a uma classe herdar propriedades e métodos de outra.</p>
+        <div class="code-block">
+            class Estudante extends Pessoa {
+                constructor(nome, idade, curso) {
+                    super(nome, idade);
+                    this.curso = curso;
+                }
+
+                seApresentar() {
+                    return `${super.seApresentar()} Eu estudo ${this.curso}.`;
+                }
+            }
+        </div>
+    </section>
+
+    <section class="explanation">
+        <h2>5. Criando uma Instância da Subclasse</h2>
+        <div class="code-block">
+            const estudante1 = new Estudante("Bob", 20, "Engenharia de Software");
+            console.log(estudante1.seApresentar());  // Saída: "Meu nome é Bob e eu tenho 20 anos. Eu estudo Engenharia de Software."
+        </div>
+    </section>
+
+    <section class="explanation">
+        <h2>6. Boas Práticas ao Usar Classes</h2>
+        <ul>
+            <li><strong>Encapsulamento:</strong> Mantenha dados que não devem ser acessados diretamente privados usando o prefixo # em propriedades e métodos.</li>
+            <li><strong>Reusabilidade:</strong> Utilize herança apenas quando faz sentido (relação "é-um").</li>
+            <li><strong>Legibilidade:</strong> Nomeie classes, métodos e propriedades de forma clara e intuitiva.</li>
+        </ul>
+        <p><strong>Conclusão:</strong></p>
+        <p>Classes em JavaScript simplificam a estruturação de códigos mais complexos, tornando o código mais legível e fácil de manter. Com a prática, você começará a ver os benefícios de utilizar essa abordagem em seus projetos de desenvolvimento web.</p>
+    </section>
+
+    <div id="apresentacao"></div> <!-- Local para inserir as apresentações -->
+
+    <script type="module">
+        import { Pessoa } from './Pessoa.js';
+        import { Estudante } from './Estudante.js';
+
+        const pessoa1 = new Pessoa("Alice", 30);
+        const estudante1 = new Estudante("Bob", 20, "Engenharia de Software");
+
+        const apresentacoesDiv = document.getElementById('apresentacao');
+        apresentacoesDiv.innerHTML = `
+            <h2>Apresentações:</h2>
+            <p>${pessoa1.seApresentar()}</p>
+            <p>${estudante1.seApresentar()}</p>
+        `;
+    </script>
+</body>
+</html>
