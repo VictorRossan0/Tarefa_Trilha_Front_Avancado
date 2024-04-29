@@ -1,0 +1,16 @@
+/* styles.css */
+.counter {
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  margin-bottom: 10px;
+}
+
+.todo-item {
+  margin-bottom: 5px;
+}
+
+.todo-item button {
+  margin-left: 10px;
+}
