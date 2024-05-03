@@ -4,10 +4,13 @@
   /* Cor de fundo alternativa */
 }
 
-/* Estilo para o h1 */
-h1 {
+.titulo-app {
   color: black;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 40px;
 }
+
 
 /* Estilo para o formulário e botão */
 .formulario-tarefa {
@@ -96,12 +99,6 @@ h1 {
   color: white;
 }
 
-.bg-success {
-  background-color: #28a745;
-  /* Verde para prioridade baixa */
-  color: white;
-}
-
 /* Animação para piscar em vermelho */
 @keyframes blink-red {
 
@@ -123,4 +120,22 @@ h1 {
 /* Aplicar animação para prioridade "imediata" */
 .tarefa-imediata {
   animation: blink-red 1s infinite;
+}
+
+/* Estilos para telas pequenas (celulares) */
+@media (max-width: 576px) {
+  .titulo-app {
+    font-size: 1.5rem;
+    /* Reduz o tamanho da fonte do título */
+    margin-bottom: 20px;
+    /* Adiciona espaço abaixo do título */
+  }
+}
+
+/* Estilos para telas médias e grandes (tablets, desktops) */
+@media (min-width: 576px) {
+  .titulo-app {
+    font-size: 2rem;
+    /* Tamanho de fonte padrão para telas maiores */
+  }
 }

@@ -69,24 +69,27 @@ function App() {
       <div className="card">
         <div className="container">
           <div className="d-flex justify-content-between mb-4">
-            <div>
+            <div className="logo-container">
               <img
                 src="https://globalhitss.com/br/wp-content/uploads/2024/03/logo_BR-no-copy.png"
                 alt="Logo"
                 className="img-fluid mx-auto d-block mb-4"
-                style={{ maxWidth: '300px' }}
+                style={{ maxWidth: '300px', marginTop: '20px' }}
               />
             </div>
-            <div>
+            <div className="logo-container">
               <img
                 src="https://capacitati.globalhitss.com.br/pluginfile.php/1/core_admin/logo/0x150/1658342593/HallCapacitaTiHorizontal.png"
                 alt="CapacitaTI"
                 className="img-fluid mx-auto d-block mb-4"
-                style={{ maxWidth: '300px' }}
+                style={{ maxWidth: '300px', marginTop: '20px' }}
               />
             </div>
           </div>
-          <h3 className="text-center mb-4">Aplicativo React para Lista de Tarefas</h3>
+          <div className="row">
+            <h3 className="titulo-app">Aplicativo React para Lista de Tarefas</h3>
+          </div>
+
           <FormularioTarefa adicionarTarefa={adicionarTarefa} />
           <div className="mt-4">
             <TransitionGroup className="tarefas-lista">
