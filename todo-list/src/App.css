@@ -1,28 +1,126 @@
 .app {
   padding: 30px;
-  background-color: #003366; /* Cor primária da Global Hitss */
+  background-color: #f8f9fa;
+  /* Cor de fundo alternativa */
 }
 
-.todo {
-  align-items: center;
+/* Estilo para o h1 */
+h1 {
+  color: black;
+}
+
+/* Estilo para o formulário e botão */
+.formulario-tarefa {
   display: flex;
-  font-size: 18px;
+  align-items: flex-start;
+  /* Alinhar os itens ao topo */
+}
+
+.card {
+  margin-bottom: 10px;
+  /* Adiciona espaçamento externo na parte inferior */
+}
+
+.tarefa {
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-/* Estilo para o h2 */
-h2 {
-  color: black; /* Cor primária da Global Hitss */
+.tarefa-concluida {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
-/* Estilo para o texto dentro do Form.Label */
-.form-label {
-  color: black; /* Cor primária da Global Hitss */
-  font-weight: bold; /* Manter o texto em negrito */
+.tarefa button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-/* Estilo para o botão */
-button[type="submit"] {
-  margin-top: 10px; /* Adiciona um espaçamento na parte superior do botão */
+.tarefas-lista {
+  list-style-type: none;
+  padding: 0;
 }
 
+.tarefa-enter {
+  opacity: 0;
+}
+
+.tarefa-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.tarefa-exit {
+  opacity: 1;
+}
+
+.tarefa-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Espaçamento entre o formulário e a lista de tarefas */
+.app .mt-4 {
+  margin-top: 20px;
+}
+
+/* Estilos para os indicadores de prioridade */
+.badge {
+  margin-right: 5px;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.bg-blue {
+  background-color: blue;
+  /* Adicione outras propriedades de estilo conforme necessário */
+}
+
+.bg-danger {
+  background-color: #dc3545;
+  /* Vermelho para prioridade alta e imediata*/
+  color: white;
+}
+
+.bg-warning {
+  background-color: #ffc107;
+  /* Amarelo para prioridade média */
+  color: white;
+}
+
+.bg-success {
+  background-color: #28a745;
+  /* Verde para prioridade baixa */
+  color: white;
+}
+
+/* Animação para piscar em vermelho */
+@keyframes blink-red {
+
+  0%,
+  100% {
+    background-color: red;
+    color: black;
+    /* Manter o texto em outra cor */
+  }
+
+  50% {
+    background-color: #f8f9fa;
+    /* Voltar para a cor original de fundo */
+    color: black;
+    /* Manter o texto em outra cor */
+  }
+}
+
+/* Aplicar animação para prioridade "imediata" */
+.tarefa-imediata {
+  animation: blink-red 1s infinite;
+}
