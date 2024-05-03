@@ -1,0 +1,28 @@
+.app {
+  padding: 30px;
+  background-color: #003366; /* Cor primária da Global Hitss */
+}
+
+.todo {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+}
+
+/* Estilo para o h2 */
+h2 {
+  color: black; /* Cor primária da Global Hitss */
+}
+
+/* Estilo para o texto dentro do Form.Label */
+.form-label {
+  color: black; /* Cor primária da Global Hitss */
+  font-weight: bold; /* Manter o texto em negrito */
+}
+
+/* Estilo para o botão */
+button[type="submit"] {
+  margin-top: 10px; /* Adiciona um espaçamento na parte superior do botão */
+}
+

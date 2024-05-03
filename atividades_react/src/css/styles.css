@@ -1,0 +1,42 @@
+/* Estilos globais */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contêiner da aplicação */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Elementos dentro do contêiner */
+.container > * {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Título do componente */
+.header {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Contêiner das imagens */
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo das imagens */
+.image {
+  width: 150px;
+  margin-right: 20px;
+}
