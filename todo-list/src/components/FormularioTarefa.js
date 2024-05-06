@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from 'react-bootstrap';
 
-function FormularioTarefa({ adicionarTarefa }) {
-    const [texto, setTexto] = useState("");
-    const [prioridade, setPrioridade] = useState("baixa");
+function FormularioTarefa({ adicionarTarefa, tarefaEditando, setTarefaEditando }) {
+    const [texto, setTexto] = useState(tarefaEditando ? tarefaEditando.texto : "");
+    const [prioridade, setPrioridade] = useState(tarefaEditando ? tarefaEditando.prioridade : "baixa");
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -11,6 +11,7 @@ function FormularioTarefa({ adicionarTarefa }) {
         adicionarTarefa(texto, prioridade);
         setTexto("");
         setPrioridade("baixa");
+        setTarefaEditando(null);
     };
 
     return (
@@ -30,13 +31,13 @@ function FormularioTarefa({ adicionarTarefa }) {
                         onChange={e => setPrioridade(e.target.value)}
                         style={{ marginRight: '10px' }}
                     >
-                        <option value="imediata">Imediata</option>
-                        <option value="alta">Alta</option>
-                        <option value="media">Média</option>
                         <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                        <option value="imediata">Imediata</option>
                     </Form.Control>
                     <Button variant="primary" type="submit">
-                        Adicionar
+                        {tarefaEditando ? "Atualizar" : "Adicionar"}
                     </Button>
                 </Form.Group>
             </Form>
