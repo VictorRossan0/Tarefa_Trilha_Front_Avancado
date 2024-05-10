@@ -8,6 +8,9 @@ import FormularioTarefa from './components/FormularioTarefa';
 import FiltroTarefas from './components/FiltroTarefas';
 import PaginacaoTarefas from './components/PaginacaoTarefas';
 
+// Definição das prioridades ordenadas
+const prioridadesOrdenadas = ['imediata', 'alta', 'media', 'baixa'];
+
 function Tarefa({ tarefa, index, marcarTarefa, removerTarefa, editarTarefa }) {
   return (
     <div className={`tarefa ${tarefa.isDone ? 'tarefa-concluida' : ''} ${tarefa.prioridade === 'imediata' ? 'tarefa-imediata' : ''}`}>
@@ -90,14 +93,20 @@ function App() {
     setTarefas(novasTarefas);
   };
 
+  // Função para editar uma tarefa
   const editarTarefa = tarefa => {
     setTarefaEditando(tarefa);
   };
 
+  // Ordenar tarefas por prioridade
+  const tarefasOrdenadas = tarefas.sort((a, b) =>
+    prioridadesOrdenadas.indexOf(a.prioridade) - prioridadesOrdenadas.indexOf(b.prioridade)
+  );
+
   // Filtrar tarefas
   const tarefasFiltradas = filtro
-    ? tarefas.filter(tarefa => tarefa.prioridade === filtro)
-    : tarefas;
+    ? tarefasOrdenadas.filter(tarefa => tarefa.prioridade === filtro)
+    : tarefasOrdenadas;
 
   // Paginar tarefas
   const indiceInicio = (paginaAtual - 1) * tarefasPorPagina;
@@ -155,7 +164,6 @@ function App() {
               ))}
             </TransitionGroup>
           </div>
-
           <PaginacaoTarefas paginaAtual={paginaAtual} totalPaginas={totalPaginas} setPaginaAtual={setPaginaAtual} />
         </div>
       </div>

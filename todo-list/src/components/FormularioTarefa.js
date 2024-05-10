@@ -16,7 +16,7 @@ function FormularioTarefa({ adicionarTarefa, tarefaEditando, setTarefaEditando }
 
     return (
         <div className="formulario-tarefa">
-            <Form onSubmit={handleSubmit} className="flex-grow-1">
+            <Form className="flex-grow-1">
                 <Form.Group className="d-flex align-items-center">
                     <Form.Control
                         type="text"
@@ -36,11 +36,11 @@ function FormularioTarefa({ adicionarTarefa, tarefaEditando, setTarefaEditando }
                         <option value="alta">Alta</option>
                         <option value="imediata">Imediata</option>
                     </Form.Control>
-                    <Button variant="primary" type="submit">
-                        {tarefaEditando ? "Atualizar" : "Adicionar"}
-                    </Button>
                 </Form.Group>
             </Form>
+            <Button variant="primary" onClick={handleSubmit}>
+                {tarefaEditando ? "Atualizar" : "Adicionar"}
+            </Button>
         </div>
     );
 }
