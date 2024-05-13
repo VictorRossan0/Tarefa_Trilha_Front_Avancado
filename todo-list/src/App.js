@@ -117,24 +117,26 @@ function App() {
     <div className="app bg-blue">
       <div className="card">
         <div className="container">
-          <div className="d-flex justify-content-between mb-4">
-            <div className="logo-container">
-              <img
-                src="https://globalhitss.com/br/wp-content/uploads/2024/03/logo_BR-no-copy.png"
-                alt="Logo"
-                className="img-fluid mx-auto d-block mb-4"
-                style={{ maxWidth: '300px', marginTop: '20px' }}
-              />
-            </div>
-            <div className="logo-container">
+          <div className="row">
+            <div className="col-md-6 text-center mb-4">
               <img
                 src="https://capacitati.globalhitss.com.br/pluginfile.php/1/core_admin/logo/0x150/1658342593/HallCapacitaTiHorizontal.png"
                 alt="CapacitaTI"
-                className="img-fluid mx-auto d-block mb-4"
-                style={{ maxWidth: '300px', marginTop: '20px' }}
+                className="img-fluid mx-auto d-block imagem text-center"
+                style={{ maxWidth: '100%', marginTop: '20px' }}
+              />
+            </div>
+
+            <div className="col-md-6 text-center mb-4">
+              <img
+                src="https://globalhitss.com/br/wp-content/uploads/2024/03/logo_BR-no-copy.png"
+                alt="Logo"
+                className="img-fluid mx-auto d-block imagem text-center"
+                style={{ maxWidth: '100%', marginTop: '20px' }}
               />
             </div>
           </div>
+
           <div className="row">
             <h3 className="titulo-app">Aplicativo React para Lista de Tarefas</h3>
           </div>
