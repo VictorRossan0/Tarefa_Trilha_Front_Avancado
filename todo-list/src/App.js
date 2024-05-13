@@ -169,6 +169,9 @@ function App() {
           <PaginacaoTarefas paginaAtual={paginaAtual} totalPaginas={totalPaginas} setPaginaAtual={setPaginaAtual} />
         </div>
       </div>
+      <footer className="footer text-center mt-5" style={{ color: 'white' }}>
+        <p>Propriedade de Victor Rossano</p>
+      </footer>
     </div>
   );
 }
