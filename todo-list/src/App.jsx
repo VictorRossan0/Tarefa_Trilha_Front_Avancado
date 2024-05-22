@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaCheck, FaTimes, FaEdit } from 'react-icons/fa';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './App.css';
-import FormularioTarefa from './components/FormularioTarefa';
-import FiltroTarefas from './components/FiltroTarefas';
-import PaginacaoTarefas from './components/PaginacaoTarefas';
+import FormularioTarefa from './components/FormularioTarefa/FormularioTarefa';
+import FiltroTarefas from './components/FiltroTarefas/FiltroTarefas';
+import PaginacaoTarefas from './components/PaginacaoTarefas/PaginacaoTarefas';
 
 // Definição das prioridades ordenadas
 const prioridadesOrdenadas = ['imediata', 'alta', 'media', 'baixa'];
